@@ -21,29 +21,20 @@
       <div class="main-panel">
         <div class="content-wrapper">
           
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="d-flex justify-content-between flex-wrap">
-                <div class="d-flex align-items-end flex-wrap">
-                  <div class="mr-md-3 mr-xl-5">
-                    <h2>Selamat datang, <?= $nama ?></h2>
-                    <p class="mb-md-0">Your analytics dashboard template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-7 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">INFO</p>
-                  <p class="mb-4">Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php  
+            if (isset($_GET["page"])) {
+              $page = $_GET["page"]; 
+              //pemanggilan ke halaman-halaman menu admin 
+              $admin_page = array(
+                "dashboard","editpassword","logout","pages","pagesnew","post","postnew","profil","user"
+              );
+              if  (in_array($page, $admin_page)) {
+                $pagee = str_replace("-", "", $page);
+                include("page/$pagee.php");
+              }
+            }
+            else{ include("page/dashboard.php"); }   
+          ?>
 
         </div>
         <!-- content-wrapper ends -->

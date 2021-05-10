@@ -1,3 +1,8 @@
+<?php  
+  include('../koneksi/koneksi.php'); 
+  include('includes/session.php');
+  date_default_timezone_set("Asia/Jakarta"); 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Majestic Admin</title>
+  <title>Dashboard Admin</title>
   <?php include("includes/head.php"); ?>
 </head>
 <body>
@@ -21,7 +26,7 @@
               <div class="d-flex justify-content-between flex-wrap">
                 <div class="d-flex align-items-end flex-wrap">
                   <div class="mr-md-3 mr-xl-5">
-                    <h2>Welcome back,</h2>
+                    <h2>Selamat datang, <?= $nama ?></h2>
                     <p class="mb-md-0">Your analytics dashboard template.</p>
                   </div>
                 </div>
@@ -33,8 +38,8 @@
             <div class="col-md-7 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Cash deposits</p>
-                  <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
+                  <p class="card-title">INFO</p>
+                  <p class="mb-4">Lorem ipsum dolor sit amet</p>
                 </div>
               </div>
             </div>

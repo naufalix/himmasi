@@ -13,11 +13,9 @@
     p {margin: 0px}
     .table thead tr th {padding: 10px !important; font-size: 14px; }
     .table tbody tr td {padding: 5px !important}
-    .table tbody tr td img {border-radius: 0px !important}
     .btn-table {padding: 2px !important; height: fit-content;}
     .btn-table i {font-size: 16px;}
     .of-cover {object-fit: cover;}
-    button span{vertical-align: text-top;}
     .dataTables_wrapper .dataTable .btn {padding: 3px 5px 5px 3px;}
     #jalur tbody tr td {border: 1px solid #ececec; padding: 5px;}
     .form-control {border: 1px solid #ced4da; height: 36px !important;}
@@ -33,10 +31,3 @@
     .dataTables_wrapper .dataTable thead .sorting:after, .dataTables_wrapper .dataTable thead .sorting_asc:after, .dataTables_wrapper .dataTable thead .sorting_desc:after, .dataTables_wrapper .dataTable thead .sorting_asc_disabled:after, .dataTables_wrapper .dataTable thead .sorting_desc_disabled:after {
     right: 3px;bottom: 0px;}
   </style>
-  <!-- <input type="text" list="cars" />
-<datalist id="cars">
-  <option>Volvo</option>
-  <option>Saab</option>
-  <option>Mercedes</option>
-  <option>Audi</option>
-</datalist> -->
