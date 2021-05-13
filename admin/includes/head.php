@@ -4,6 +4,7 @@
   <!-- endinject -->
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="assets/vendors/summernote/dist/summernote-bs4.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -16,9 +17,11 @@
     .btn-table {padding: 2px !important; height: fit-content;}
     .btn-table i {font-size: 16px;}
     .of-cover {object-fit: cover;}
+    .img-profil {object-fit: cover; object-position: top}
     .dataTables_wrapper .dataTable .btn {padding: 3px 5px 5px 3px;}
     #jalur tbody tr td {border: 1px solid #ececec; padding: 5px;}
     .form-control {border: 1px solid #ced4da; height: 36px !important;}
+    .card {border: 1px solid #e3e3e3;}
     select.form-control {border: 1px solid #ced4da; outline: 0px}
     .td_jalur   {min-width: 90px; white-space: normal !important;}
     .td_jurusan {min-width: 200px; white-space: normal !important;}

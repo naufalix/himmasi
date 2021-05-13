@@ -19,14 +19,14 @@
     <div class="container-fluid page-body-wrapper">
       <?php include("includes/sidebar.php"); ?>
       <div class="main-panel">
-        <div class="content-wrapper">
+        <div class="content-wrapper pt-4">
           
           <?php  
             if (isset($_GET["page"])) {
               $page = $_GET["page"]; 
               //pemanggilan ke halaman-halaman menu admin 
               $admin_page = array(
-                "dashboard","editpassword","logout","pages","pagesnew","post","postnew","profil","user"
+                "dashboard","editpassword","logout","pages","pagesnew","post","postnew","profil","user","user2"
               );
               if  (in_array($page, $admin_page)) {
                 $pagee = str_replace("-", "", $page);

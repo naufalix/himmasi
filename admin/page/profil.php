@@ -57,7 +57,7 @@
                       	}
                       	if (empty($foto)) {$foto="default.png";}
                   	?>
-                    <img src="assets/img/profil/<?= $foto ?>" class="rounded-circle mx-auto of-cover" style="width: 200px; height:200px;">
+                    <img src="assets/img/profil/<?= $foto ?>" class="rounded-circle mx-auto img-profil" style="width: 200px; height:200px;">
                     <button type="button" class="btn btn-inverse-primary btn-rounded btn-social-icon" data-toggle="modal" data-target="#editFoto" style="left: 150px; top: 150px; position: absolute;">
                       <i class="mdi mdi-pencil-outline"></i>
                     </button>

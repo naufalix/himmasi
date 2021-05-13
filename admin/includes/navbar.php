@@ -12,7 +12,7 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="assets/img/profil/<?= $foto ?>" class="of-cover" alt="profile"/>
+              <img src="assets/img/profil/<?= $foto ?>" class="img-profil" alt="profile"/>
               <span class="nav-profile-name"><?= $nama ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">

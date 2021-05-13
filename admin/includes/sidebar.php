@@ -18,12 +18,12 @@
             </a>
             <div class="collapse" id="post">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Add New</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=postnew">Add New</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">All Post</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-content-copy menu-icon flip-v"></i>
               <span class="menu-title">Pages</span>
@@ -35,7 +35,7 @@
                 <li class="nav-item"> <a class="nav-link" href="#">All Pages</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="mdi mdi-folder-multiple-image menu-icon"></i>

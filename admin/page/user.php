@@ -1,4 +1,5 @@
-<?php  
+<?php 
+  /* Tambah */ 
   if (isset($_POST["submit-tambah"])) {
     if (!empty($_POST["nama"])&&!empty($_POST["username"])&&!empty($_POST["password"])&&!empty($_POST["jabatan"])&&!empty($_POST["level"])) {
       $nama       = $_POST["nama"];
@@ -14,6 +15,57 @@
       } else {$gagal = "Username telah terpakai";}
     }else {$gagal = "Semua data wajib diisi!";}
   }
+
+  /* Edit */
+  if (isset($_POST["submit-edit"])) {
+    if (!empty($_POST["nama"])&&!empty($_POST["username"])&&!empty($_POST["jabatan"])&&!empty($_POST["level"])&&!empty($_POST["id_user"])&&!empty($_POST["username_lama"])) {
+      $id_user       = $_POST["id_user"];
+      $nama          = $_POST["nama"];
+      $username      = $_POST["username"];
+      $username_lama = $_POST["username_lama"];
+      $jabatan       = $_POST["jabatan"];
+      $level         = $_POST["level"];
+
+      if ($username==$username_lama) {
+        mysqli_query($koneksi,"UPDATE `user` SET `nama`='$nama',`username`='$username',`level`='$level',`jabatan`='$jabatan' WHERE `id_user`='$id_user'");
+        if (!empty($_POST["password"])) {
+          $password      = MD5($_POST["password"]);
+          mysqli_query($koneksi,"UPDATE `user` SET `password`='$password' WHERE `id_user`='$id_user'");
+        }
+        $berhasil = "Akun berhasil diedit";
+      }
+
+      if ($username!=$username_lama) {
+        if (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `user` WHERE `username`='$username'"))=="0") {
+          mysqli_query($koneksi,"UPDATE `user` SET `nama`='$nama',`username`='$username',`level`='$level',`jabatan`='$jabatan' WHERE `id_user`='$id_user'");
+          if (!empty($_POST["password"])) {
+            $password      = MD5($_POST["password"]);
+            mysqli_query($koneksi,"UPDATE `user` SET `password`='$password' WHERE `id_user`='$id_user'");
+          }
+          $berhasil = "Akun berhasil di edit";
+        } else {$gagal = "Username telah terpakai";}
+      }
+
+    } 
+  }
+
+  /* Edit Foto*/  
+
+  /* Hapus User*/ 
+  if (isset($_POST["submit-hapus"])) {
+    if (!empty($_POST["id_user"])) {
+      mysqli_query($koneksi,"DELETE from `user` where `id_user` = '$id_user'");
+      //get foto
+      $query_f = mysqli_query($koneksi,"SELECT `foto` FROM `user` WHERE `id_user`='$id_user'"); 
+      if(mysqli_num_rows($query_f)!="0"){ 
+        while($data_f = mysqli_fetch_row($query_f)){ 
+          $foto = $data_f[0]; 
+          //menghapus foto 
+          unlink("assets/img/profil/$foto"); 
+        } 
+      }
+    }
+  } 
 ?> 
           <section class="row">
             <div class="col-md-12 grid-margin">
@@ -79,7 +131,7 @@
                         <tr>
                           <td class="td-nomer"><?= $no ?></td>
                           <td>
-                            <img src="assets/img/profil/<?= $foto ?>" class="rounded-circle of-cover mr-2" style="height:16px;width:16px">
+                            <img src="assets/img/profil/<?= $foto ?>" class="rounded-circle img-profil mr-2" style="height:16px;width:16px">
                             <span><?= $nama ?></span>
                           </td>
                           <td><?= $username ?></td>
@@ -87,7 +139,7 @@
                           <td><?= $level ?></td><td>
                             <button type="button" class="btn btn-primary btn-sm btn-table" title="Edit" data-toggle="modal" data-target="#editUser" onclick='editUser(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-pencil"></i></button>
                             <p id="<?= $id_user ?>" class="d-none"><?php echo $nama.','.$username.','.$jabatan.','.$level ?></p>
-                            <button type="button" class="btn btn-primary btn-sm btn-table" title="Edit Logo" data-toggle="modal" data-target="#editFoto" onclick='editFoto(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-image-area"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm btn-table" title="Edit Foto" data-toggle="modal" data-target="#editFoto" onclick='editFoto(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-image-area"></i></button>
                             <button type="button" class="btn btn-danger btn-sm btn-table" title="Hapus"><i class="mdi mdi-delete-forever"></i></button>
                           </td>
                         </tr>
@@ -163,6 +215,8 @@
                 </div>
                 <div class="modal-body">
                   <form class="forms-sample" method="post">
+                    <input type="hidden" class="d-none" id="eId" name="id_user">
+                    <input type="hidden" class="d-none" id="eUsernameLama" name="username_lama">
                     <div class="form-group">
                       <label for="nama">Nama</label>
                       <input type="text" class="form-control form-control-sm" id="eNama" name="nama" placeholder="Nama..." required>
@@ -176,7 +230,7 @@
                         <div class="col-6 p-0 pr-2">
                           <label for="password">Password</label>
                           <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="Password...">
-                          <p>Kosongkan jika tidak ingin mengganti password</p>
+                          <p class="text-danger">Kosongkan jika tidak ingin mengganti password</p>
                         </div>
                       </div>
                     </div>
@@ -209,17 +263,17 @@
             <div class="modal-dialog modal-md" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="eNamaLogo"><i class="mdi mdi-image-area"></i> Edit Logo</h5>
+                  <h5 class="modal-title" id="eNamaLogo"><i class="mdi mdi-image-area"></i> Edit Foto</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
                 <div class="modal-body">
                   <form class="forms-sample" method="post" enctype="multipart/form-data">
-                    <input type="hidden" class="d-none" id="eIdLogo" name="id_univ" required>
+                    <input type="hidden" class="d-none" id="eIdFoto" name="id_user" required>
                     <div class="form-group">
-                      <label>Logo</label>
-                      <input type="file" name="logo" class="file-upload-default" id="customFile">
+                      <label>Foto</label>
+                      <input type="file" name="foto" class="file-upload-default" id="customFile">
                       <div class="input-group col-xs-12">
                         <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
                         <span class="input-group-append">
@@ -227,12 +281,12 @@
                         </span>
                       </div>
                       <ul class="my-2">
-                        <li class="text-danger">Logo harus berformat JPG atau PNG.</p></li>
-                        <li class="text-danger">Logo tidak boleh lebih dari 500 KB.</li>
+                        <li class="text-danger">Foto harus berformat JPG atau PNG.</p></li>
+                        <li class="text-danger">Foto tidak boleh lebih dari 500 KB.</li>
                       </ul>
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" name="submit-logo" class="btn btn-success"><i class="mdi mdi-content-save"></i><span> Simpan</span></button>
+                      <button type="submit" name="submit-foto" class="btn btn-success"><i class="mdi mdi-content-save"></i><span> Simpan</span></button>
                       <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
                     </div>
                   </form>
@@ -244,13 +298,18 @@
           <script type="text/javascript">
             function editUser(iduser){
               var dataUser = (document.getElementById(iduser).textContent).split(",");
+              document.getElementById("eId").value = iduser;
               document.getElementById("eNama").value = dataUser[0];
               document.getElementById("eUsername").value = dataUser[1];
+              document.getElementById("eUsernameLama").value = dataUser[1];
               document.getElementById("eJabatan").value = dataUser[2];
               for (var i = 0; i < document.getElementsByClassName("eLevel").length ; i++) {
                 if (document.getElementsByClassName("eLevel")[i].value==dataUser[3]) {
                   document.getElementsByClassName("eLevel")[i].selected = "true";
                 }
               }
+            }
+            function editFoto(iduser){
+              document.getElementById("eIdFoto").value = iduser;
             }
           </script>
