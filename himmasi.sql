@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2021 at 07:54 PM
+-- Generation Time: May 14, 2021 at 08:04 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -81,10 +81,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`, `jabatan`, `foto`) VALUES
-(1, 'Naufal Ulinnuha', 'naufal', '21232f297a57a5a743894a0e4a801fc3', 'superadmin', 'Ketua Divisi Puskominfo', '1.png'),
+(1, 'Naufal Ulinnuha', 'naufal', '21232f297a57a5a743894a0e4a801fc3', 'superadmin', 'Ketua Divisi Puskominfo', '1.jpg'),
 (2, 'Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'Anggota Advokesma', ''),
 (3, 'Nurul Maftuchah', 'nurul', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'Anggota PSDM', '3.jpg'),
-(4, 'Arif Yudha Wibisono', 'arif', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', 'Ketua Divisi DMB', '');
+(4, 'Arif Yudha Wibisono', 'arif', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', 'Ketua Divisi DMB', '4.jpg'),
+(5, 'Naurah Fauziah Al-Zaend', 'naurah', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'Anggota DMB', '5.jpg'),
+(7, 'Fenny Inriana', 'fenny', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'Anggota Puskominfo', ''),
+(8, 'Salnan Ratih', 'salnan', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', 'Pembina Himmasi', '8.jpg');
 
 --
 -- Indexes for dumped tables
@@ -132,7 +135,7 @@ ALTER TABLE `tag_post`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

@@ -1,9 +1,10 @@
 
 username	password	level		name					email
 ========================================================================================================================
+salnan		123456		superadmin	Salnan Ratih
 admin		admin		admin		Administrator				admin@gmail.com
 nurul		123456		admin		Nurul Maftuchah				
-arif		123456		admin		Arif Yudha Wibisono			
+arif		123456		superadmin	Arif Yudha Wibisono			
 naufal		admin		superadmin	Muhammad Rizqi Naufal Ulinnuha		naufalulinnuha40@gmail.com
 naurah		123456		admin		Naurah Fauziah Al-Zaend			naurah1687@gmail.com
 fenny		123456		admin		Fenny Inriana				

@@ -15,9 +15,11 @@
     .table thead tr th {padding: 10px !important; font-size: 14px; }
     .table tbody tr td {padding: 5px !important}
     .btn-table {padding: 2px !important; height: fit-content;}
-    .btn-table i {font-size: 16px;}
+    .btn-table i {font-size: 16px !important}
+    .btn i {font-size: 14px;}
     .of-cover {object-fit: cover;}
     .img-profil {object-fit: cover; object-position: top}
+    td .img-profil:hover{height: 100px !important;width: 100px !important;left: 10px;margin-top: -75px;position: absolute;}
     .dataTables_wrapper .dataTable .btn {padding: 3px 5px 5px 3px;}
     #jalur tbody tr td {border: 1px solid #ececec; padding: 5px;}
     .form-control {border: 1px solid #ced4da; height: 36px !important;}

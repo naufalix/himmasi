@@ -19,7 +19,8 @@
             <div class="collapse" id="post">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="index.php?page=postnew">Add New</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">All Post</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=post">All Post</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=posttag">Tag</a></li>
               </ul>
             </div>
           </li>
@@ -56,12 +57,16 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php?page=user">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">Pengaturan User</span>
-            </a>
-          </li>
+          <?php
+            if ($level=="superadmin") { ?>
+             <li class="nav-item">
+              <a class="nav-link" href="index.php?page=user">
+                <i class="mdi mdi-account menu-icon"></i>
+                <span class="menu-title">Pengaturan User</span>
+              </a>
+            </li>
+            <?php } 
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="index.php?page=profil">
               <i class="mdi mdi-account menu-icon"></i>
