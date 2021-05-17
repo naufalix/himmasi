@@ -20,7 +20,7 @@
                 <i class="mdi mdi-rotate-3d text-primary"></i>
                 Refresh
               </a>
-              <a href="logout.php" class="dropdown-item">
+              <a href="index.php?page=logout" class="dropdown-item">
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout
               </a>

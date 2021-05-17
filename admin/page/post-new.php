@@ -10,10 +10,20 @@
         mysqli_query($koneksi,"INSERT INTO `post` (`judul`,`isi`,`status`,`link`,`insert_by`,`insert_at`,`update_by`,`update_at`) 
         VALUES ('$judul','$isi','$status','$link','$id_user','$tanggal','$id_user','$tanggal')");
         
-        //header("Location:index.php?page=post&berhasil=1");
-        $notif = "Akun berhasil ditambahkan";
-      } else {$notif = "Link telah terpakai";}
-    }else {$notif = "Semua data wajib diisi!";}
+        //get id post
+        $query_id = mysqli_query($koneksi,"SELECT `id_post` FROM `post` WHERE `link`='$link'"); 
+        while($data_id = mysqli_fetch_row($query_id)){ $id_post = $data_id[0]; }
+
+        if(!empty($_POST['tag'])){
+          $tagg = $_POST['tag'];
+          foreach ($tagg as $i){
+            mysqli_query($koneksi,"INSERT INTO `tag_post` (`id_post`, `id_tag`) VALUES ('$id_post', '$i')");
+          }
+        }
+        echo '<meta http-equiv="refresh" content="0;url=index.php?page=post&berhasil=1" />';
+        //$berhasil = "Post berhasil ditambahkan";
+      } else {$gagal = "Permalink telah dipakai di postingan lain";}
+    }else {$gagal = "Semua data wajib diisi!";}
   }
 ?>
 <style type="text/css">
@@ -21,6 +31,17 @@
 	.card-body {padding: 16px !important}
 	.card-title, .card {margin-bottom: 16px !important}
 </style>
+<?php 
+  if (isset($berhasil)) {?>
+    <div class="alert alert-success col-12" role="alert">
+      <p><?= $berhasil ?></p>
+    </div>
+  <?php } else if (isset($gagal)) {?>
+    <div class="alert alert-danger col-12" role="alert">
+      <p><?= $gagal ?></p>
+    </div>
+  <?php }
+?>
 <form method="post">
 <div class="row">
 	<div class="col-md-8">
@@ -77,15 +98,19 @@
 			<div class="card-body">
 				<h4 class="card-title">Tag</h4>
 				<div class="form-group row m-0">
+          <?php
+            $sql = "SELECT `id_tag`, `tag` FROM `tag` ORDER BY `tag`";
+            $query = mysqli_query($koneksi,$sql); 
+            while($data = mysqli_fetch_array($query)){ 
+              $id_tag  = $data["id_tag"]; 
+              $tag     = $data["tag"];
+          ?>
           <div class="form-check col-6 my-0">
-            <label class="form-check-label"><input type="checkbox" class="form-check-input">Default</label>
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="tag[]" value="<?= $id_tag ?>"><?= $tag ?>
+            </label>
           </div>
-          <div class="form-check col-6 my-0">
-            <label class="form-check-label"><input type="checkbox" class="form-check-input" checked> Checked</label>
-          </div>
-          <div class="form-check col-6 my-0">
-            <label class="form-check-label"><input type="checkbox" class="form-check-input"> Teknologi</label>
-          </div>
+          <?php } ?>
         </div>
 			</div>
 		</div>

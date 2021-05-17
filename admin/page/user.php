@@ -92,7 +92,7 @@
                   <div class="mr-md-3 mr-xl-5">
                     <div class="row m-0">
                       <h2>Pengaturan User</h2>
-                      <button type="button" class="btn btn-outline-primary btn-sm mx-3" data-toggle="modal" data-target="#tambahUser" style="height: fit-content;">
+                      <button type="button" class="btn btn-outline-primary btn-sm ml-3" data-toggle="modal" data-target="#tambahUser" style="height: fit-content;">
                         Tambah User
                       </button>
                     </div>

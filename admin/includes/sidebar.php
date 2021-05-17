@@ -18,25 +18,12 @@
             </a>
             <div class="collapse" id="post">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=postnew">Add New</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=post-new">Add New</a></li>
                 <li class="nav-item"> <a class="nav-link" href="index.php?page=post">All Post</a></li>
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=posttag">Tag</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=post-tag">Tag</a></li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-content-copy menu-icon flip-v"></i>
-              <span class="menu-title">Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="pages">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Add New</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">All Pages</a></li>
-              </ul>
-            </div>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="mdi mdi-folder-multiple-image menu-icon"></i>
@@ -51,9 +38,11 @@
             </a>
             <div class="collapse" id="website">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Navbar</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Headline</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">Visi & Misi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Footer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Daftar Divisi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Daftar Anggota</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Logo</a></li>
               </ul>
             </div>
           </li>
@@ -74,7 +63,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?page=editpassword">
+            <a class="nav-link" href="index.php?page=password">
               <i class="mdi mdi-key-variant menu-icon flip-h"></i>
               <span class="menu-title">Edit Password</span>
             </a>

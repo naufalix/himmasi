@@ -2,6 +2,14 @@
   include('../koneksi/koneksi.php'); 
   include('includes/session.php');
   date_default_timezone_set("Asia/Jakarta"); 
+  if (isset($_GET["page"])) {
+	  $page = $_GET["page"]; 
+	  //pemanggilan ke halaman-halaman menu admin 
+	  $admin_page = array("logout");
+	  if  (in_array($page, $admin_page)) {
+	    include("page/$page.php");
+	  }
+	}
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,12 +34,13 @@
               $page = $_GET["page"]; 
               //pemanggilan ke halaman-halaman menu admin 
               $admin_page = array(
-                "dashboard","editpassword","logout","pages","pagesnew","post","postnew","profil","user","user2"
+                "dashboard","password","logout","post","post-new","post-edit","post-tag","profil",
+                "user"
               );
               if  (in_array($page, $admin_page)) {
-                $pagee = str_replace("-", "", $page);
-                include("page/$pagee.php");
-              }
+                //$pagee = str_replace("-", "", $page);
+                include("page/$page.php");
+              }else{echo "Page not found!";}
             }
             else{ include("page/dashboard.php"); }   
           ?>
