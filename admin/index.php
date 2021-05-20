@@ -35,7 +35,7 @@
               //pemanggilan ke halaman-halaman menu admin 
               $admin_page = array(
                 "dashboard","password","logout","post","post-new","post-edit","post-tag","profil",
-                "user"
+                "user","media","user2","tag2"
               );
               if  (in_array($page, $admin_page)) {
                 //$pagee = str_replace("-", "", $page);

@@ -48,21 +48,24 @@
     } 
   }
 
-  /* Edit Foto*/ 
+  /* Edit Foto*/  
   if (isset($_POST["submit-foto"])) {
-    if (!empty($_POST['id_user'])&&!empty($_FILES['foto'])) {
-      $id_user  = $_POST["id_user"];
-      $file_tmp   = $_FILES['foto']['tmp_name'];
-      $file_name  = $_FILES['foto']['name']; 
-      $file_exp   = explode('.',$file_name);
-      $file_ext   = end($file_exp);
-      $nama_file  = $id_user.".".$file_ext;
-      $direktori  = 'assets/img/profil/'.$nama_file;
-      if(move_uploaded_file($file_tmp,$direktori)){ 
-        mysqli_query($koneksi,"UPDATE `user` SET `foto`='$nama_file' WHERE `id_user`='$id_user'");
-        $berhasil="Foto berhasil diupload";
-      }else{
-        $gagal="Foto gagal diupload";
+    if(!empty($_POST["id_user"])) {
+      $id_user =$_POST["id_user"];
+      if (isset($_FILES['foto'])) {
+        $file_tmp   = $_FILES['foto']['tmp_name'];
+        $file_name  = $_FILES['foto']['name']; 
+        $file_exp   = explode('.',$file_name);
+        $file_ext   = end($file_exp);
+        $nama_file  = $id_user.".".$file_ext;
+        $direktori  = 'assets/img/profil/'.$nama_file;
+        if(move_uploaded_file($file_tmp,$direktori)){ 
+          mysqli_query($koneksi,"UPDATE `user` SET `foto`='$nama_file' WHERE `id_user`='$id_user'");
+          $berhasil="Foto berhasil diupload";
+        }
+      }
+      else{
+      $gagal="Foto gagal diupload";
       }
     }
   }
@@ -70,7 +73,7 @@
   /* Hapus User*/ 
   if (isset($_POST["submit-hapus"])) {
     if (!empty($_POST["id_user"])) {
-      $id_user = $_POST["id_user"];
+      $id_user =$_POST["id_user"];
       mysqli_query($koneksi,"DELETE from `user` where `id_user` = '$id_user'");
       //get foto
       $query_f = mysqli_query($koneksi,"SELECT `foto` FROM `user` WHERE `id_user`='$id_user'"); 
@@ -81,7 +84,7 @@
           unlink("assets/img/profil/$foto"); 
         } 
       }
-      $berhasil = "Akun berhasil dihapus";
+      $berhasil= "Akun berhasil dihapus";
     }
   } 
 ?> 
@@ -92,7 +95,7 @@
                   <div class="mr-md-3 mr-xl-5">
                     <div class="row m-0">
                       <h2>Pengaturan User</h2>
-                      <button type="button" class="btn btn-outline-primary btn-sm ml-3" data-toggle="modal" data-target="#tambahUser" style="height: fit-content;">
+                      <button type="button" class="btn btn-outline-primary btn-sm mx-3" data-toggle="modal" data-target="#tambahUser" style="height: fit-content;">
                         Tambah User
                       </button>
                     </div>
@@ -158,7 +161,7 @@
                             <button type="button" class="btn btn-primary btn-sm btn-table" title="Edit" data-toggle="modal" data-target="#editUser" onclick='editUser(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-pencil"></i></button>
                             <p id="<?= $id_user ?>" class="d-none"><?php echo $nama.','.$username.','.$jabatan.','.$level ?></p>
                             <button type="button" class="btn btn-primary btn-sm btn-table" title="Edit Foto" data-toggle="modal" data-target="#editFoto" onclick='editFoto(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-image-area"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm btn-table" title="Hapus" data-toggle="modal" data-target="#hapusUser" onclick='hapusUser(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-delete-forever"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm btn-table" title="Hapus"  data-toggle="modal" data-target="#hapusUser" onclick='hapusUser(<?php echo  '"'.$id_user.'"' ?>)'><i class="mdi mdi-delete-forever"></i></button>
                           </td>
                         </tr>
                         <?php $no++; } ?>
@@ -277,6 +280,31 @@
             </div>
           </div>      
 
+          <div class="modal fade" id="hapusUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="eNamaHapus"><i class="mdi mdi-delete-forever"></i> Hapus User</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form class="forms-sample" method="post" enctype="multipart/formdata">
+                    <input type="hidden" class="d-none" id="eIdHapus" name="id_user" required>
+                   <div class="form-grup">
+                    <p class="" id="eDesc">Apakah anda yakin ingin menghapus user ? </p>
+                   </div>
+                    <div class="modal-footer p-0 pt-3">
+                      <button type="button" class="btn btn-sm btn-outline-dark" data-dismiss="modal">Batal</button>
+                      <button type="submit" class="btn btn-sm btn-danger" name="submit-hapus"><i class="mdi mdi-delete-forever"></i><span> Hapus</span></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>      
+
           <div class="modal fade" id="editFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
               <div class="modal-content">
@@ -304,33 +332,8 @@
                       </ul>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Batal</button>
-                      <button type="submit" class="btn btn-success" name="submit-foto" ><i class="mdi mdi-content-save"></i><span> Simpan</span></button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="hapusUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="eNamaHapus"><i class="mdi mdi-delete-forever"></i> Hapus User</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form class="forms-sample" method="post" enctype="multipart/form-data">
-                    <input type="hidden" class="d-none" id="eIdHapus" name="id_user" required>
-                    <div class="form-group">
-                      <p class="" id="eDesc">Apakah anda yakin ingin menghapus?</p>
-                    </div>
-                    <div class="modal-footer p-0 pt-3">
-                      <button type="button" class="btn btn-sm btn-outline-dark" data-dismiss="modal">Batal</button>
-                      <button type="submit" class="btn btn-sm btn-danger" name="submit-hapus" ><i class="mdi mdi-delete"></i><span> Hapus</span></button>
+                      <button type="submit" name="submit-foto" class="btn btn-success"><i class="mdi mdi-content-save"></i><span> Simpan</span></button>
+                      <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
                     </div>
                   </form>
                 </div>

@@ -25,7 +25,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index.php?page=media">
               <i class="mdi mdi-folder-multiple-image menu-icon"></i>
               <span class="menu-title">Media</span>
             </a>
@@ -38,11 +38,11 @@
             </a>
             <div class="collapse" id="website">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Headline</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Visi & Misi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Daftar Divisi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Daftar Anggota</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Logo</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="#">Headline</a></li> -->
+                <!-- <li class="nav-item"> <a class="nav-link" href="#">Visi & Misi</a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=divisi">Daftar Divisi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="index.php?page=anggota">Daftar Anggota</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="#">Logo</a></li> -->
               </ul>
             </div>
           </li>

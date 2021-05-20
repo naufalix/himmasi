@@ -5,6 +5,7 @@
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="assets/vendors/summernote/dist/summernote-bs4.css">
+  <!-- <link rel="stylesheet" href="assets/vendors/lightgallery/css/lightgallery.css"> -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -31,6 +32,8 @@
     .td-nomer   {width: 10px; text-align: center;}
     .flip-h {transform: scale(-1, 1)}
     .flip-v {transform: scale(1, -1)}
+    .mediafile div img {width: 100%;}
+    .mediafile div button {position: absolute; right: 10px}
 
     .dataTables_wrapper .dataTable thead .sorting:before, .dataTables_wrapper .dataTable thead .sorting_asc:before, .dataTables_wrapper .dataTable thead .sorting_desc:before, .dataTables_wrapper .dataTable thead .sorting_asc_disabled:before, .dataTables_wrapper .dataTable thead .sorting_desc_disabled:before {right: 8px;bottom: 10px;}
     .dataTables_wrapper .dataTable thead .sorting:after, .dataTables_wrapper .dataTable thead .sorting_asc:after, .dataTables_wrapper .dataTable thead .sorting_desc:after, .dataTables_wrapper .dataTable thead .sorting_asc_disabled:after, .dataTables_wrapper .dataTable thead .sorting_desc_disabled:after {
