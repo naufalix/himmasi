@@ -23,6 +23,8 @@
   <style type="text/css">
     .bg-dark {background-color: #273A5A!important;}
     .bg-warning {background-color: #FFD52B!important;}
+    .text-dark {color: #273A5A!important;}
+    .text-warning {color: #FFD52B!important;}
     .btn-warning {color: #273A5A;background-color: #FFD52B;border-color: #FFD52B;box-shadow: none;}
     .navbar-nav .nav-link {
       font-weight: 400;

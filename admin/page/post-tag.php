@@ -18,7 +18,7 @@
     } 
   }
 
-  /* Hapus User*/ 
+  /* Hapus */ 
   if (isset($_POST["submit-hapus"])) {
     if (!empty($_POST["id_tag"])) {
       $id_tag  = $_POST["id_tag"];
@@ -126,7 +126,7 @@
           </div>
 
           <div class="modal fade" id="editTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
+            <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel"><i class="mdi mdi-tag"></i> Edit Tag</h5>
