@@ -16,7 +16,7 @@
                 $level = $data[1];
                 $_SESSION['id_user']=$id_user; 
                 $_SESSION['level']=$level; 
-                header("Location:../admin"); 
+                header("Location:../admin/dashboard"); 
             } 
         } else {header("Location:index.php?gagal=1");}
 	} else {header("Location:index.php?gagal=1");}

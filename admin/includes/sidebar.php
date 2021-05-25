@@ -5,7 +5,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="dashboard">
               <i class="mdi mdi-speedometer menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -18,14 +18,14 @@
             </a>
             <div class="collapse" id="post">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=post-new">Add New</a></li>
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=post">All Post</a></li>
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=post-tag">Tag</a></li>
+                <li class="nav-item"> <a class="nav-link" href="post-new">Add New</a></li>
+                <li class="nav-item"> <a class="nav-link" href="post">All Post</a></li>
+                <li class="nav-item"> <a class="nav-link" href="post-tag">Tag</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?page=media">
+            <a class="nav-link" href="media">
               <i class="mdi mdi-folder-multiple-image menu-icon"></i>
               <span class="menu-title">Media</span>
             </a>
@@ -38,18 +38,15 @@
             </a>
             <div class="collapse" id="website">
               <ul class="nav flex-column sub-menu">
-                <!-- <li class="nav-item"> <a class="nav-link" href="#">Headline</a></li> -->
-                <!-- <li class="nav-item"> <a class="nav-link" href="#">Visi & Misi</a></li> -->
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=divisi">Daftar Divisi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="index.php?page=anggota">Daftar Anggota</a></li>
-                <!-- <li class="nav-item"> <a class="nav-link" href="#">Logo</a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="departemen">Daftar Departemen</a></li>
+                <li class="nav-item"> <a class="nav-link" href="anggota">Daftar Anggota</a></li>
               </ul>
             </div>
           </li>
           <?php
             if ($level=="superadmin") { ?>
              <li class="nav-item">
-              <a class="nav-link" href="index.php?page=user">
+              <a class="nav-link" href="user">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Pengaturan User</span>
               </a>
@@ -57,13 +54,13 @@
             <?php } 
           ?>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?page=profil">
+            <a class="nav-link" href="profil">
               <i class="mdi mdi-account menu-icon"></i>
               <span class="menu-title">Profil</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?page=password">
+            <a class="nav-link" href="password">
               <i class="mdi mdi-key-variant menu-icon flip-h"></i>
               <span class="menu-title">Edit Password</span>
             </a>

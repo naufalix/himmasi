@@ -20,7 +20,7 @@
             mysqli_query($koneksi,"INSERT INTO `tag_post` (`id_post`, `id_tag`) VALUES ('$id_post', '$i')");
           }
         }
-        echo '<meta http-equiv="refresh" content="0;url=index.php?page=post&berhasil=1" />';
+        echo '<meta http-equiv="refresh" content="0;url=post-berhasil-1" />';
         //$berhasil = "Post berhasil ditambahkan";
       } else {$gagal = "Permalink telah dipakai di postingan lain";}
     }else {$gagal = "Semua data wajib diisi!";}
@@ -48,7 +48,7 @@
 
     <div class="form-group">
       <h3>Tambah Postingan Baru</h3>
-      <input type="text" class="form-control form-control-sm" id="judul" name="judul" placeholder="Judul postingan..." required>
+      <input type="text" class="form-control form-control-sm" id="judul" name="judul" placeholder="Judul postingan..." maxlength="90" required>
       <p class="mb-md-0 m-1 d-none"><b>Permalink : </b>http://</p>
     </div>
     <textarea class="d-none" id="summernoteExample" name="isi" required>
@@ -90,7 +90,7 @@
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Permalink</h4>
-				<input type="text" class="form-control form-control-sm" id="link" name="link" required>
+				<input type="text" class="form-control form-control-sm" id="link" name="link" maxlength="90" required>
 			</div>
 		</div>
 

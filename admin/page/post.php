@@ -24,7 +24,7 @@
                   <div class="mr-md-3 mr-xl-5">
                     <div class="row m-0">
                       <h2>Semua Post</h2>
-                      <a href="index.php?page=post-new" type="button" class="btn btn-outline-primary btn-sm ml-3" style="height: fit-content;">
+                      <a href="post-new" type="button" class="btn btn-outline-primary btn-sm ml-3" style="height: fit-content;">
                         Tambah Post
                       </a>
                     </div>
@@ -38,13 +38,13 @@
           <section class="card">
             <div class="card-body">
               <h4 class="mb-4">
-                <span class="card-title"><a href="index.php?page=post">All</a> 
+                <span class="card-title"><a href="post">All</a> 
                   (<?= mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `post`")) ?>) | </span>
-                <span class="card-title"><a href="index.php?page=post&post_type=publish">Published</a> 
+                <span class="card-title"><a href="post_type-publish">Published</a> 
                   (<?= mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `post` WHERE `status`='publish'")) ?>) | </span>
-                <span class="card-title"><a href="index.php?page=post&post_type=draft">Draft</a> 
+                <span class="card-title"><a href="post_type-draft">Draft</a> 
                   (<?= mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `post` WHERE `status`='draft'")) ?>) | </span>
-                <span class="card-title"><a href="index.php?page=post&post_type=trash">Trash</a> 
+                <span class="card-title"><a href="post_type-trash">Trash</a> 
                   (<?= mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `post` WHERE `status`='trash'")) ?>)</span>
               </h4>
               <?php 
@@ -114,7 +114,7 @@
                           <td><?= $date ?></td>
                           <td>
                             <p id="<?= $id_post ?>" class="d-none"><?php echo $judul; ?></p>
-                            <a href="index.php?page=post-edit&id_post=<?= $id_post ?>" type="button" class="btn btn-primary btn-sm btn-table" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                            <a href="post-edit-id-<?= $id_post ?>" type="button" class="btn btn-primary btn-sm btn-table" title="Edit"><i class="mdi mdi-pencil"></i></a>
                             <?php 
                               if ($status=="publish") { ?>
                                 <a href="#" type="button" class="btn btn-primary btn-sm btn-table" title="Lihat Postingan"><i class="mdi mdi-eye"></i></a>

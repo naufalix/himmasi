@@ -55,7 +55,7 @@
     <div class="form-group">
       <h3>Edit Postingan</h3>
       <input type="hidden" name="id_post" value="<?= $id_post ?>" required>
-      <input type="text" class="form-control form-control-sm" id="judul" name="judul" placeholder="Judul postingan..." value="<?= $judul ?>" required>
+      <input type="text" class="form-control form-control-sm" id="judul" name="judul" placeholder="Judul postingan..." value="<?= $judul ?>" maxlength="90" required>
       <p class="mb-md-0 m-1 d-none"><b>Permalink : </b>http://</p>
     </div>
     <textarea class="d-none" id="summernoteExample" name="isi" required>

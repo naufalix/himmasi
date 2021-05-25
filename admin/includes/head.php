@@ -19,6 +19,7 @@
     .btn-table i {font-size: 16px !important}
     .btn i {font-size: 14px;}
     .of-cover {object-fit: cover;}
+    .of-contain {object-fit: contain;}
     .img-profil {object-fit: cover; object-position: top}
     td .img-profil:hover{height: 100px !important;width: 100px !important;left: 10px;margin-top: -75px;position: absolute;}
     .dataTables_wrapper .dataTable .btn {padding: 3px 5px 5px 3px;}
@@ -26,9 +27,7 @@
     .form-control {border: 1px solid #ced4da; height: 36px !important;}
     .card {border: 1px solid #e3e3e3;}
     select.form-control {border: 1px solid #ced4da; outline: 0px}
-    .td_jalur   {min-width: 90px; white-space: normal !important;}
-    .td_jurusan {min-width: 200px; white-space: normal !important;}
-    .td_univ    {min-width: 260px; white-space: normal !important;}
+    .td-deskripsi {min-width: 180px; white-space: normal !important;line-height: 20px !important;}
     .td-nomer   {width: 10px; text-align: center;}
     .flip-h {transform: scale(-1, 1)}
     .flip-v {transform: scale(1, -1)}

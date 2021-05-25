@@ -20,3 +20,7 @@
 
     <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
+    <script>
+        var load = document.getElementById("loader-wrapper"); 
+        window.addEventListener('load', function(){load.style.display = "none";}); 
+    </script>

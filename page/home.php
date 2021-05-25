@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="display-2 font-weight-bold text-white">HIMMASI</h2>
-						<p class="lead text-white mb-8">Himpunan Mahasiswa Sistem Informasi Vokasi <br>Universitas Brawijaya</p>
+						<p class="lead text-white mb-8">Himpunan Mahasiswa Sistem Informasi <br>Vokasi Universitas Brawijaya</p>
 						<a href="#!" class="btn btn-white shadow lift">Lorem Ipsum</a>
           	<div style="height:58px"></div>
           </div>
@@ -28,42 +28,6 @@
         <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"></path></svg>
       </div>
     </div>
-
-    <!-- VISI & MISI -->
-    <!-- <section class="pb-4 pb-md-5 pt-10" id="about">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
-            <h2 class="font-weight-bold">Visi & <span class="text-primary">Misi</span></h2>
-						<p class="font-size-lg text-muted mb-9">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-6">
-            <div class="row align-items-center mb-8 aos-init aos-animate" data-aos="fade-up">
-              <div class="col-4 col-lg-5">
-                <img src="assets/img/illustrations/illustration-4.png" alt="..." class="img-fluid">
-							</div>
-              <div class="col-8 col-lg-7">
-                <h3 class="font-weight-bold mb-2">Visi</h3>
-								<p class="text-gray-700 mb-0">Communicate with your team in public or private chats with individuals or groups.</p>
-							</div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="row align-items-center mb-8 aos-init aos-animate" data-aos="fade-up">
-              <div class="col-4 col-lg-5">
-                <img src="assets/img/illustrations/illustration-7.png" alt="..." class="img-fluid">
-							</div>
-              <div class="col-8 col-lg-7">
-                <h3 class="font-weight-bold mb-2">Misi</h3>
-								<p class="text-gray-700 mb-0">Keep track of what's happening in your company from a centralized dashboard.</p>
-							</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- DEPARTEMEN -->
     <section class="pb-4 pb-md-5 pt-10">
@@ -84,7 +48,7 @@
                $logo      = $data["logo"];
           ?>
           <div class="col-12 col-md-6 text-center">
-            <div class="icon icon-lg mb-4"><img class="m-1" src="assets/img/logo/<?= $logo ?>" height="50px"></div>
+            <div class="icon icon-lg mb-4"><img class="m-1" src="assets/img/logo/<?= $logo ?>" height="100px"></div>
             <h3 class="font-weight-bold"><?= $nama ?></h3>
 						<p class="text-muted mb-8"><?= $deskripsi ?></p>
 					</div>
@@ -99,61 +63,36 @@
       	<div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="font-weight-bold text-warning">Anggota <span class="text-dark bg-warning rounded">&nbsp;HIMMASI&nbsp;</span></h2>
-						<p class="font-size-lg text-muted mb-9">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="font-size-lg text-muted mb-9">Geser>></p>
 					</div>
         </div>
         <div class="row">
           <div class="col-12">
             <!-- Flickity -->
             <div class="flickity-viewport-visible pt-2 pb-9" data-flickity='{"cellAlign": "left", "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "contain": true}'>
-              
+              <?php
+                $sql = "SELECT * FROM `anggota` WHERE `tampil`='show' ORDER BY `urutan` LIMIT 7 "; 
+                $query = mysqli_query($koneksi,$sql); 
+                while($data = mysqli_fetch_array($query)){
+                  $nama     = $data["nama"];
+                  $jabatan  = $data["jabatan"];
+                  $foto     = $data["foto"];
+                  if (empty($foto)) {$foto="default.png";}
+              ?>
               <div class="col-12 col-md-5 col-lg-4">
-                <div class="card card-border shadow-light-lg lift lift-lg" style="border-top-color: #0081C9;">
+                <div class="card card-border shadow-light-lg lift lift-lg" style="border-top-color: #FFD52B;">
                   <div class="card-body text-center">
-										<div class="img-fluid mb-5 w-50 svg-shim mx-auto" style="color: #0081C9;">
-                      <img src="assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+										<div class="img-fluid mb-5 w-50 svg-shim mx-auto" style="color: #FFD52B;">
+                      <img src="assets/img/foto/<?= $foto ?>" alt="..." class="avatar-img rounded-circle">
                     </div>
-                    <h3 style="font-weight: 600;">Nama</h3>
-										<p class="text-gray-600 mb-5"><i>Ketua Himmasi</i></p>
+                    <h3 style="font-weight: 600;"><?= $nama ?></h3>
+										<p class="text-gray-600 mb-5"><i><?= $jabatan ?></i></p>
+                    <?php if(strlen($jabatan)<23){echo "<br>";} ?>
                   </div>
                 </div>
 							</div>
-							<div class="col-12 col-md-5 col-lg-4">
-                <div class="card card-border shadow-light-lg lift lift-lg" style="border-top-color: #0081C9;">
-                  <div class="card-body text-center">
-										<div class="img-fluid mb-5 w-50 svg-shim mx-auto" style="color: #0081C9;">
-                      <img src="assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <h3 style="font-weight: 600;">Nama</h3>
-										<p class="text-gray-600 mb-5"><i>Wakil Ketua 1</i></p>
-                  </div>
-                </div>
-							</div>
-							<div class="col-12 col-md-5 col-lg-4">
-                <div class="card card-border shadow-light-lg lift lift-lg" style="border-top-color: #0081C9;">
-                  <div class="card-body text-center">
-										<div class="img-fluid mb-5 w-50 svg-shim mx-auto" style="color: #0081C9;">
-                      <img src="assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <h3 style="font-weight: 600;">Nama</h3>
-										<p class="text-gray-600 mb-5"><i>Wakil Ketua 2</i></p>
-                  </div>
-                </div>
-							</div>
-							<div class="col-12 col-md-5 col-lg-4">
-                <div class="card card-border shadow-light-lg lift lift-lg" style="border-top-color: #0081C9;">
-                  <div class="card-body text-center">
-										<div class="img-fluid mb-5 w-50 svg-shim mx-auto" style="color: #0081C9;">
-                      <img src="assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <h3 style="font-weight: 600;">Nama</h3>
-										<p class="text-gray-600 mb-5"><i>Sekretaris</i></p>
-                  </div>
-                </div>
-							</div>
-
+              <?php } ?>
             </div>
-
           </div>
         </div> <!-- / .row -->
       </div> <!-- / .container -->
@@ -174,7 +113,7 @@
         <div class="row">
           <?php
             $sql = "SELECT * FROM `post` LEFT JOIN `user` ON `post`.`insert_by`=`user`.`id_user` 
-                    WHERE `status`='publish' ORDER BY `id_post` DESC LIMIT 6 "; 
+                    WHERE `status`='draft' ORDER BY `id_post` DESC LIMIT 6 "; 
             $query = mysqli_query($koneksi,$sql); 
             while($data = mysqli_fetch_array($query)){
               $judul      = $data["judul"];
@@ -200,6 +139,7 @@
               $insert_at  = $data["insert_at"];
               $tanggal    = date_create("$insert_at");
               $author     = $data["nama"];
+              $link       = $data["link"];
               $foto       = $data["foto"];
               if (empty($foto)) {$foto="default.png";}
 
@@ -218,7 +158,7 @@
             <!-- Card -->
             <div class="card mb-6 mb-lg-0 shadow lift lift-lg">
               <!-- Image -->
-              <a class="card-img-top" href="#!">
+              <a class="card-img-top" href="index.php?page=post&link=<?= $link ?>">
                 <img src="<?= $thumbnail ?>" alt="..." class="card-img-top">
                 <div class="position-relative">
                   <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
@@ -227,12 +167,12 @@
                 </div>
               </a>
               <!-- Body -->
-              <a class="card-body" href="#!">
-                <h3><?= $judul2 ?></h3>
-                <p class="mb-0 text-muted" style="font-size: medium"><?= $isi2 ?></p>
+              <a class="card-body" href="index.php?page=post&link=<?= $link ?>">
+                <h4 style="font-weight:500"><?= $judul ?></h4>
+                <p class="mb-0 text-muted d-none" style="font-size: medium"><?= $isi2 ?></p>
               </a>
               <!-- Meta -->
-              <a class="card-meta mt-auto" href="#!">
+              <a class="card-meta mt-auto d-none" href="#!">
                 <hr class="card-meta-divider">
                 <div class="avatar avatar-sm mr-2">
                   <img src="admin/assets/img/profil/<?= $foto ?>" alt="" class="avatar-img rounded-circle" style="object-position: top;">

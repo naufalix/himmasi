@@ -3,6 +3,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>HIMMASI</title>
+  <link rel="stylesheet" href="assets/css/bootloader.css">
+  <div id="loader-wrapper">
+    <div id="loader">
+    </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right">
+    </div>
+  </div>
   <!-- Libs CSS -->
   <link rel="stylesheet" href="assets/fonts/Feather/feather.css">
   <link rel="stylesheet" href="assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.css">
@@ -26,12 +34,9 @@
     .text-dark {color: #273A5A!important;}
     .text-warning {color: #FFD52B!important;}
     .btn-warning {color: #273A5A;background-color: #FFD52B;border-color: #FFD52B;box-shadow: none;}
-    .navbar-nav .nav-link {
-      font-weight: 400;
-      font-size: 14px;
-      padding-right: 16px;
-      padding-left: 16px;
-    }
+    .navbar-nav .nav-link {font-weight: 400;font-size: 14px;padding-right: 16px;padding-left: 16px;}
+    .text-elipsis{white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+    .post img, .post p img {width: 100%; margin-bottom: 20px; border-radius: 5px}
 
 
   </style>

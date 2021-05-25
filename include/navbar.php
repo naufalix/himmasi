@@ -17,28 +17,28 @@
           <!-- Navigation -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link" id="navbarLandings" href="#" aria-haspopup="true" aria-expanded="false">Beranda</a>
+              <a class="nav-link" id="navbarLandings" href="index.php" aria-haspopup="true" aria-expanded="false">Beranda</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarAccount" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Tentang Kami &nbsp;<i class="fa fa-angle-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarAccount">
-                <li class="dropdown-item dropright"><a class="dropdown-link" data-toggle="dropdown" href="#">Kabinet Bagaskara</a></li>
+                <li class="dropdown-item dropright"><a class="dropdown-link" href="index.php?page=kabinet">Kabinet Bagaskara</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" id="navbarPages" href="#" aria-haspopup="true" aria-expanded="false">Blog</a>
+              <a class="nav-link" id="navbarPages" href="index.php?page=blog" aria-haspopup="true" aria-expanded="false">Blog</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarAccount" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Departemen &nbsp;<i class="fa fa-angle-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarAccount">
-                <li class="dropdown-item dropright"><a class="dropdown-link" data-toggle="dropdown" href="#">Advokesma</a></li>
-                <li class="dropdown-item dropright"><a class="dropdown-link" data-toggle="dropdown" href="#">DMB</a></li>
-                <li class="dropdown-item dropright"><a class="dropdown-link" data-toggle="dropdown" href="#">PSDM</a></li>
-                <li class="dropdown-item dropright"><a class="dropdown-link" data-toggle="dropdown" href="#">Puskominfo</a></li>
+                <li class="dropdown-item dropright"><a class="dropdown-link" href="#">Advokesma</a></li>
+                <li class="dropdown-item dropright"><a class="dropdown-link" href="#">DMB</a></li>
+                <li class="dropdown-item dropright"><a class="dropdown-link" href="#">PSDM</a></li>
+                <li class="dropdown-item dropright"><a class="dropdown-link" href="#">Puskominfo</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" id="navbarPages" href="#" aria-haspopup="true" aria-expanded="false">Agenda Kegiatan</a>
+              <a class="nav-link" id="navbarPages" href="index.php?page=kabinet" aria-haspopup="true" aria-expanded="false">Agenda Kegiatan</a>
             </li>
           </ul>
           <!-- Button -->
