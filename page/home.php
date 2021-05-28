@@ -11,7 +11,9 @@
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="display-2 font-weight-bold text-white">HIMMASI</h2>
 						<p class="lead text-white mb-8">Himpunan Mahasiswa Sistem Informasi <br>Vokasi Universitas Brawijaya</p>
-						<a href="#!" class="btn btn-white shadow lift">Lorem Ipsum</a>
+						<a href="kabinet" class="btn btn-dark shadow lift">
+              <img src="assets/img/logokabinet.png" style="filter: drop-shadow(2px 4px 6px black);">
+            </a>
           	<div style="height:58px"></div>
           </div>
         </div> <!-- / .row -->
@@ -30,12 +32,12 @@
     </div>
 
     <!-- DEPARTEMEN -->
-    <section class="pb-4 pb-md-5 pt-10">
+    <section class="pt-8 pt-md-10">
       <div class="container">
       	<div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="font-weight-bold">Departemen di <span class="text-warning bg-dark rounded">&nbsp;HIMMASI&nbsp;</span></h2>
-						<p class="font-size-lg text-muted mb-9">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="font-size-lg text-muted mb-9"></p>
 					</div>
         </div>
         <div class="row">
@@ -57,19 +59,40 @@
       </div> <!-- / .container -->
     </section>
 
+    <!-- VISI & MISI -->
+    <section class="py-4 py-md-5" id="about">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+            <h2 class="font-weight-bold">Program kerja di <span class="text-warning bg-dark rounded">&nbsp;HIMMASI&nbsp;</span></h2>
+            <p class="font-size-lg text-muted">
+            Tiap departemen di HIMMASI memiliki program kerja masing-masing, dan tak menutup kemungkinan program kerja akan dilaksanakan dalam waktu yang sama. 
+            Biasanya BPH akan mengadakan rapat dengan seluruh kepala departemen untuk melakukan koordinasi dan sinkronisasi terhadap program kerja yang akan dilaksanakan, 
+            hal tersebut bertujuan agar program kerja yang dilakukan tidak saling berbenturan tiap departemen dan juga dapat dilakukan monitoring pada tiap proker.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ANGGOTA -->
-    <section class="py-4 py-md-5 bg-dark">
+    <div class="position-relative">
+      <div class="shape shape-top shape-fluid-x svg-shim text-white">
+        <svg viewBox="0 0 2880 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2880 0H0v54.112h720s289.42 40.248 705 0c416.5-37.733 735 0 735 0h720V0z" fill="currentColor"/></svg>
+      </div>
+    </div>
+    <section class="pt-8 pt-md-10 bg-dark">
       <div class="container">
       	<div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="font-weight-bold text-warning">Anggota <span class="text-dark bg-warning rounded">&nbsp;HIMMASI&nbsp;</span></h2>
-						<p class="font-size-lg text-muted mb-9">Geser>></p>
+						<p class="font-size-lg text-muted mb-5">Geser>></p>
 					</div>
         </div>
         <div class="row">
           <div class="col-12">
             <!-- Flickity -->
-            <div class="flickity-viewport-visible pt-2 pb-9" data-flickity='{"cellAlign": "left", "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "contain": true}'>
+            <div class="flickity-viewport-visible pt-2 pb-10" data-flickity='{"cellAlign": "left", "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "contain": true}'>
               <?php
                 $sql = "SELECT * FROM `anggota` WHERE `tampil`='show' ORDER BY `urutan` LIMIT 7 "; 
                 $query = mysqli_query($koneksi,$sql); 
@@ -97,19 +120,21 @@
         </div> <!-- / .row -->
       </div> <!-- / .container -->
     </section>
+    <div class="position-relative" style="transform: rotate(180deg);">
+      <div class="shape shape-top shape-fluid-x svg-shim text-white">
+        <svg viewBox="0 0 2880 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2880 0H0v54.112h720s289.42 40.248 705 0c416.5-37.733 735 0 735 0h720V0z" fill="currentColor"/></svg>
+      </div>
+    </div>
 
     <!-- ARTICLES -->
-    <section class="pt-4 pt-md-5 pb-md-12">
+    <section class="pt-8 pt-md-10 pb-md-12">
       <div class="container">
-        <div class="row align-items-center mb-5">
-          <div class="col-12 col-md">
-						<h3 class="mb-0">Postingan terbaru</h3>
-						<p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-          <div class="col-12 col-md-auto">
-						<a href="#!" class="btn btn-sm btn-outline-gray-300 d-none d-md-inline">Lihat semua</a>
-					</div>
-        </div> <!-- / .row -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+            <h2 class="font-weight-bold">Postingan <span class="text-warning bg-dark rounded">&nbsp;Terbaru&nbsp;</span></h2>
+            <p class="font-size-lg text-muted mb-9"></p>
+          </div>
+        </div>
         <div class="row">
           <?php
             $sql = "SELECT * FROM `post` LEFT JOIN `user` ON `post`.`insert_by`=`user`.`id_user` 
@@ -158,7 +183,7 @@
             <!-- Card -->
             <div class="card mb-6 mb-lg-0 shadow lift lift-lg">
               <!-- Image -->
-              <a class="card-img-top" href="index.php?page=post&link=<?= $link ?>">
+              <a class="card-img-top" href="post=<?= $link ?>">
                 <img src="<?= $thumbnail ?>" alt="..." class="card-img-top">
                 <div class="position-relative">
                   <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
@@ -167,12 +192,12 @@
                 </div>
               </a>
               <!-- Body -->
-              <a class="card-body" href="index.php?page=post&link=<?= $link ?>">
+              <a class="card-body" href="post=<?= $link ?>">
                 <h4 style="font-weight:500"><?= $judul ?></h4>
                 <p class="mb-0 text-muted d-none" style="font-size: medium"><?= $isi2 ?></p>
               </a>
               <!-- Meta -->
-              <a class="card-meta mt-auto d-none" href="#!">
+              <a class="card-meta mt-auto d-none" href="#">
                 <hr class="card-meta-divider">
                 <div class="avatar avatar-sm mr-2">
                   <img src="admin/assets/img/profil/<?= $foto ?>" alt="" class="avatar-img rounded-circle" style="object-position: top;">

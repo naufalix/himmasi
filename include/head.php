@@ -2,7 +2,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>HIMMASI</title>
+  <title>
+    <?php  
+      if (!empty($_GET["page"])) {
+        $page = $_GET["page"]; 
+        $admin_page = array("home","blog","post","kabinet");
+        if  (in_array($page, $admin_page)) {
+          echo "Himmasi | ".ucfirst($page);
+        }else{echo "Himmasi | 404 Not Found";}
+      }
+      else{ echo "Himmasi | Home"; }   
+    ?>
+    </title>
+  <link rel="shortcut icon" href="favicon.png" />
   <link rel="stylesheet" href="assets/css/bootloader.css">
   <div id="loader-wrapper">
     <div id="loader">
@@ -24,6 +36,10 @@
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.min.css">
   <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/brands.min.css">
+  <link rel="stylesheet" href="assets/css/regular.min.css">
+  <link rel="stylesheet" href="assets/css/solid.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap">

@@ -99,6 +99,7 @@
                             $views   = $data["views"];
                             $date    = $data["update_at"];
                             $status  = $data["status"];
+                            $link    = $data["link"];
                         ?>
                         <tr>
                           <td class="td-nomer"><?= $no ?></td>
@@ -117,7 +118,7 @@
                             <a href="post-edit-id-<?= $id_post ?>" type="button" class="btn btn-primary btn-sm btn-table" title="Edit"><i class="mdi mdi-pencil"></i></a>
                             <?php 
                               if ($status=="publish") { ?>
-                                <a href="#" type="button" class="btn btn-primary btn-sm btn-table" title="Lihat Postingan"><i class="mdi mdi-eye"></i></a>
+                                <a href="../post=<?= $link ?>" type="button" target="_blank" class="btn btn-primary btn-sm btn-table" title="Lihat Postingan"><i class="mdi mdi-eye"></i></a>
                               <?php } if ($status=="publish"||$status=="draft") {?>
                                 <button type="button" class="btn btn-danger btn-sm btn-table" title="Hapus" data-toggle="modal" data-target="#hapusPost" onclick='hapusPost(<?php echo '"'.$id_post.'"' ?>)'><i class="mdi mdi-delete"></i></button>
                               <?php } if ($status=="trash") {?>

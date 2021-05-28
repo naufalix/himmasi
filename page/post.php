@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md">
-            <a href="index.php?page=blog" class="font-weight-bold font-size-sm text-decoration-none mb-3">
+            <a href="blog" class="font-weight-bold font-size-sm text-decoration-none text-dark mb-3">
               <i class="fe fe-arrow-left mr-3"></i> All Post
             </a>
             <h1 class="display-4 mb-2 text-dark"><?= $judul ?></h1>
@@ -53,8 +53,7 @@
           </div>
           <div class="col-12 col-md-4">
             
-            <!-- Card -->
-            <div class="card shadow mb-5 bg-light">
+            <div class="card mb-5" style="border: 1px solid #d9e2ef;">
               <div class="card-body">
                 <h5 class="text-uppercase text-dark font-weight-bold">Popular Post</h5>
                 <hr class="my-2">
@@ -64,8 +63,24 @@
                     $judul     = $data["judul"];
                     $link      = $data["link"];
                 ?>
-                <a href="index.php?page=post&link=<?= $link ?>" class="text-reset font-size-sm"><?= $judul ?></a>
+                <a href="post=<?= $link ?>" class="text-reset font-size-sm"><?= $judul ?></a>
                 <hr class="my-2">
+                <?php } ?>
+              </div>
+            </div>
+            <div class="d-none card mb-5" style="border: 1px solid #d9e2ef;">
+              <div class="card-body">
+                <h5 class="text-uppercase text-dark font-weight-bold">Tags</h5>
+                <hr class="my-2">
+                <?php 
+                  $query = mysqli_query($koneksi,"SELECT * FROM `tag` ORDER BY `tag`"); 
+                  while($data = mysqli_fetch_array($query)){
+                    $id_tag  = $data["id_tag"];
+                    $tag     = $data["tag"];
+                ?>
+                <a class="badge badge-pill badge-secondary-soft mb-2" href="index.php?page=blog%tag=<?= $id_tag ?>">
+                  <span class="h6 text-uppercase"><?= $tag ?></span>
+                </a>
                 <?php } ?>
               </div>
             </div>
@@ -75,19 +90,25 @@
       </div> <!-- / .container -->
     </section>
   <?php }else{ ?>
-    <h1>Post tidak ditemukan</h1>
+    <!-- ERROR 404 -->
+    <section class="" id="post404" style="background-image: url(assets/uploads/Misaka9982_animeProfile.jpg);background-repeat: no-repeat;background-size: cover;background-position: center;">
+      <div class="py-14" style="background-color: #ffffffcf;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+              <h2 class="font-weight-bold">Error 404</h2>
+              <p class="font-size-lg text-muted">Postingan tidak ditemukan</p>
+              <a href="#" onclick="history.back()" class="btn btn-sm btn-dark text-warning shadow lift">Kembali</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   <?php } 
 ?>
-  
-
-    
-    
-
 
 		<div class="position-relative">
       <div class="shape shape-bottom shape-fluid-x svg-shim text-black">
         <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"></path></svg>
       </div>
     </div>
-
-    <!-- JAVASCRIPT -->

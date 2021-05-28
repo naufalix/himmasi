@@ -10,7 +10,7 @@
     <?php include("include/navbar.php"); ?>
 
     <?php  
-      if (isset($_GET["page"])) {
+      if (!empty($_GET["page"])) {
         $page = $_GET["page"]; 
         //pemanggilan ke halaman-halaman menu admin 
         $admin_page = array(
@@ -19,7 +19,7 @@
         if  (in_array($page, $admin_page)) {
           //$pagee = str_replace("-", "", $page);
           include("page/$page.php");
-        }else{echo "Page not found!";}
+        }else{ include("page/404.php"); }
       }
       else{ include("page/home.php"); }   
     ?>

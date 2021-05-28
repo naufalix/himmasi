@@ -16,6 +16,22 @@
       </div>
     </div>
 
+    <section class="pt-8 pt-md-10">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 order-md-2">
+            <img src="assets/img/logo/bagaskara.png" class="rounded-circle img-fluid mb-6 mb-md-0" style="filter: drop-shadow(2px 4px 6px black);">
+          </div>
+          <div class="col-12 col-md-7 order-md-1">
+            <h1 class="display-4 text-dark">Kabinet <span class="text-warning">BAGASKARA</span></h1>
+            <p class="lead text-muted mb-0">
+              <b>Bagaskara</b> berasal dari kata sansekerta yang memiliki arti Matahari, dengan filosofi Bagaskara tersebut kami harap Himmasi <b class="text-warning">selalu bersinar dan dapat memberikan cahaya</b> untuk semua mahasiswa sistem informasi pada ranah akdemik maupun non akademik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- VISI & MISI -->
     <section class="pt-8 pt-md-10" id="about">
       <div class="container">
@@ -93,7 +109,7 @@
 
     <!-- FILOSOFI -->
     <section class="pt-8 pt-md-10 pb-10">
-      <div class="container">
+      <div class="container-fluid px-10">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
             <h2 class="font-weight-bold">Filosofi <span class="text-warning bg-dark rounded">&nbsp;LOGO&nbsp;</span></h2>
