@@ -1,4 +1,5 @@
 <?php 
+  $tanggal = date("Y-m-d");
   /* Tambah */ 
   if (isset($_POST["submit-tambah"])) {
     if (!empty($_POST["nama"])&&!empty($_POST["id_dept"])&&!empty($_POST["jabatan"])&&!empty($_POST["tampil"])&&!empty($_POST["urutan"])) {
@@ -9,8 +10,8 @@
       $urutan    = $_POST["urutan"];
       
       if (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM `anggota` WHERE `nama`='$nama'"))=="0") {
-        $sql_t = "INSERT INTO `anggota` (`nama`, `id_dept`, `jabatan`, `tampil`, `urutan`)
-                  VALUES ('$nama', '$id_dept', '$jabatan', '$tampil', '$urutan')";
+        $sql_t = "INSERT INTO `anggota` (`nama`, `id_dept`, `jabatan`, `tampil`, `urutan`,`insert_by`,`insert_at`,`update_by`,`update_at`)
+                  VALUES ('$nama', '$id_dept', '$jabatan', '$tampil', '$urutan','$id_user','$tanggal','$id_user','$tanggal')";
         mysqli_query($koneksi,$sql_t);
         $berhasil = "Anggota berhasil ditambahkan";
       } else {$gagal = "Nama telah tercantum dalam daftar";}
@@ -26,7 +27,8 @@
       $jabatan     = $_POST["jabatan"];
       $tampil      = $_POST["tampil"];
       $urutan      = $_POST["urutan"];
-      mysqli_query($koneksi,"UPDATE `anggota` SET `nama`='$nama',`id_dept`='$id_dept',`jabatan`='$jabatan',`tampil`='$tampil',`urutan`='$urutan' WHERE `id_anggota`='$id_anggota'");
+      mysqli_query($koneksi,"UPDATE `anggota` SET `nama`='$nama',`id_dept`='$id_dept',`jabatan`='$jabatan',`tampil`='$tampil',`urutan`='$urutan',`update_by`='$id_user',`update_at`='$tanggal' 
+      WHERE `id_anggota`='$id_anggota'");
       $berhasil = "Akun berhasil diedit";  
     } else {$gagal = "Semua data wajib diisi!";}
   }

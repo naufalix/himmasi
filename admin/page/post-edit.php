@@ -11,7 +11,7 @@
       if(!empty($_POST['tag'])){
         $tagg = $_POST['tag'];
         foreach ($tagg as $i){
-          mysqli_query($koneksi,"INSERT INTO `tag_post` (`id_post`, `id_tag`) VALUES ('$id_post', '$i')");
+          mysqli_query($koneksi,"INSERT INTO `tag_post` (`id_post`,`id_tag`,`update_by`,`update_at`) VALUES ('$id_post','$i','$id_user','$tanggal')");
         }
       }
       $berhasil = "Post berhasil diedit";
