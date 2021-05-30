@@ -52,7 +52,7 @@
     .btn-warning {color: #273A5A;background-color: #FFD52B;border-color: #FFD52B;box-shadow: none;}
     .navbar-nav .nav-link {font-weight: 400;font-size: 14px;padding-right: 16px;padding-left: 16px;}
     .text-elipsis{white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
-    .post img, .post p img {width: 100%; margin-bottom: 20px; border-radius: 5px}
+    .post img, .post p img {max-width: 100%; margin-bottom: 20px; border-radius: 5px}
 
 
   </style>

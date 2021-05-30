@@ -58,7 +58,7 @@
                 <h5 class="text-uppercase text-dark font-weight-bold">Popular Post</h5>
                 <hr class="my-2">
                 <?php
-                  $query = mysqli_query($koneksi,"SELECT * FROM `post` ORDER BY `views` DESC LIMIT 5"); 
+                  $query = mysqli_query($koneksi,"SELECT * FROM `post` WHERE `status`='publish' ORDER BY `views` DESC LIMIT 5"); 
                   while($data = mysqli_fetch_array($query)){
                     $judul     = $data["judul"];
                     $link      = $data["link"];

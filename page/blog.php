@@ -51,7 +51,7 @@
         <div class="row">
           <?php
             $sql = "SELECT * FROM `post` LEFT JOIN `user` ON `post`.`insert_by`=`user`.`id_user` 
-                    WHERE `judul` LIKE '%$q%' ORDER BY `id_post` DESC "; 
+                    WHERE `status`='publish' AND `judul` LIKE '%$q%' ORDER BY `id_post` DESC "; 
             $query = mysqli_query($koneksi,$sql); 
             while($data = mysqli_fetch_array($query)){
               $judul      = $data["judul"];
@@ -87,10 +87,12 @@
               $doc->loadHTML($data["isi"]);
               $xpath = new DOMXPath($doc);
               $imgs = $xpath->query("//img");
-              for ($i=0; $i<$imgs->length; $i++){
-                $img = $imgs->item($i);
-                $thumbnail = $img->getAttribute("src");
-              }
+              // for ($i=0; $i<$imgs->length; $i++){
+              //   $img = $imgs->item($i);
+              //   $thumbnail = $img->getAttribute("src");
+              // }
+              $img = $imgs->item(0);
+              $thumbnail = $img->getAttribute("src");
           ?>
           <div class="col-12 col-md-6 col-lg-4 d-flex my-5">
             <!-- Card -->
