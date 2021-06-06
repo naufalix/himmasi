@@ -10,5 +10,5 @@
   	}
     if (empty($foto)) {$foto="default.png";}
               
-	if (!isset($id_user)||!isset($level)) {header("Location:../login");}
+	if (!isset($id_user)||!isset($level)) {header("Location:../login/");}
 ?>

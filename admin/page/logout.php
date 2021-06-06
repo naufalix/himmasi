@@ -1,4 +1,4 @@
 <?php  
 session_unset();
-header("Location:../login"); 
+header("Location:../login/"); 
 ?> 
