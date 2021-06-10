@@ -28,7 +28,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link" id="navbarPages" href="blog" aria-haspopup="true" aria-expanded="false">Blog</a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarAccount" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Departemen &nbsp;<i class="fa fa-angle-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarAccount">
                 <li class="dropdown-item dropright"><a class="dropdown-link" href="#">Advokesma</a></li>
@@ -39,12 +39,13 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" id="navbarPages" href="#" aria-haspopup="true" aria-expanded="false">Agenda Kegiatan</a>
-            </li>
+            </li> -->
           </ul>
           <!-- Button -->
-          <!-- <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="https://themes.getbootstrap.com/product/landkit/" target="_blank">
-            Buy now
-          </a> -->
+          <a class="navbar-btn btn btn-sm btn-white text-dark lift" href="login/index.php" target="_blank" style="padding: 3px 10px;
+    margin: 0px 20px;">
+            Login
+          </a>
         </div>
 
       </div>

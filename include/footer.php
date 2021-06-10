@@ -26,17 +26,17 @@
           <div class="col-6 col-md-4 col-lg-2">
             <h6 class="font-weight-bold text-uppercase text-gray-700">Halaman</h6>
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
-              <li class=""><a href="index.php" class="text-reset">Beranda</a></li>
-              <li class=""><a href="index.php?page=blog" class="text-reset">Blog</a></li>
+              <li class=""><a href="home" class="text-reset">Beranda</a></li>
+              <li class=""><a href="blog" class="text-reset">Blog</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-4 col-lg-2">
             <h6 class="font-weight-bold text-uppercase text-gray-700">Tentang Kami</h6>
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
-              <li class=""><a href="index.php?page=kabinet" class="text-reset">Kabinet Bagaskara</a></li>
+              <li class=""><a href="kabinet" class="text-reset">Kabinet Bagaskara</a></li>
             </ul>
           </div>
-          <div class="col-6 col-md-4 col-lg-2">
+          <!-- <div class="col-6 col-md-4 col-lg-2">
             <h6 class="font-weight-bold text-uppercase text-gray-700">Departemen</h6>
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               <li class=""><a href="#" class="text-reset">Advokesma</a></li>
@@ -44,7 +44,7 @@
               <li class=""><a href="#" class="text-reset">PSDM</a></li>
               <li class=""><a href="#" class="text-reset">Puskominfo</a></li>
             </ul>
-          </div>
+          </div> -->
 
         </div> <!-- / .row -->
       </div> <!-- / .container -->
