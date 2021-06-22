@@ -19,11 +19,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link" id="navbarLandings" href="home" aria-haspopup="true" aria-expanded="false">Beranda</a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarAccount" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Tentang Kami &nbsp;<i class="fa fa-angle-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarAccount">
                 <li class="dropdown-item dropright"><a class="dropdown-link" href="kabinet">Kabinet Bagaskara</a></li>
               </ul>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="navbarPages" href="kabinet" aria-haspopup="true" aria-expanded="false">Tentang Kami</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" id="navbarPages" href="blog" aria-haspopup="true" aria-expanded="false">Blog</a>
@@ -42,8 +45,7 @@
             </li> -->
           </ul>
           <!-- Button -->
-          <a class="navbar-btn btn btn-sm btn-white text-dark lift" href="login/index.php" target="_blank" style="padding: 3px 10px;
-    margin: 0px 20px;">
+          <a class="navbar-btn btn btn-sm btn-outline-dark btn-white text-dark mx-lg-5 lift" href="login/index.php" target="_blank" style="padding: 3px 10px;">
             Login
           </a>
         </div>
