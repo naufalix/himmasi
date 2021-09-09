@@ -19,6 +19,7 @@
         </div> <!-- / .row -->
       </div> <!-- / .container -->
 		</section>
+
 		<section id="HeadlineVideo">
     	<video id="videoshow"	autoplay loop muted>
 			  <source src="assets/uploads/profil.mp4" type="video/mp4" />
@@ -223,6 +224,19 @@
 
     <!-- JAVASCRIPT -->
     <script type="text/javascript">
-    	const height = document.querySelector('#welcome').offsetHeight;
-    	document.getElementById("videoshow").style.height = height+"px";
+      video();
+      window.addEventListener("resize", video);
+      function video(){
+        setTimeout(function(){
+           if (screen.width>1400) {  
+            document.getElementById("videoshow").style.width=screen.width+"px";
+            const height = document.querySelector('#videoshow').clientHeight;
+            document.getElementById("welcome").style.height = height+"px";
+          }
+          else {
+            const height = document.querySelector('#welcome').offsetHeight;
+            document.getElementById("videoshow").style.height = height+"px";
+          }
+        }, 500);
+      }
     </script>
